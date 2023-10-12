@@ -9,7 +9,6 @@ export class CmsCICDStack extends Stack {
       pipelineName: 'CMSPipeline',
       synth: new ShellStep('Synth', {
         input: CodePipelineSource.gitHub('anuj07negi/CDK-CMS', 'main'),
-        installCommands: ['npm i -g npm@latest'],
         commands: [
           'npx ci',
           'npx cdk synth'

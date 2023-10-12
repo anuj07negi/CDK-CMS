@@ -16,5 +16,5 @@ const apiStack = new ApiStack(app, 'ApiStack', {
   // productLambdaIntegration: lambdaStack.productLambdaIntegration,
   // orderLambdaIntegration: lambdaStack.orderLambdaIntegration,
 });
-// new CmsCICDStack(app, 'CmsCICDStack')
-// app.synth();
+new CmsCICDStack(app, 'CmsCICDStack')
+app.synth();
