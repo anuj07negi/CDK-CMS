@@ -1,0 +1,14 @@
+
+customer --> name, dob, orders, customer PublicHostedZone(S#)
+Product -> PaymentMethodChangeEvent, manufacturer, photo, 
+Order -> productIDs, paymentStatus
+
+
+CognitoUserPoolsAuthorizer, customer-> can access using gmail account
+23< to save phtos, API documention , , order invoice,
+aletrt cloud watch CfnMetricStream, APi Response - 
+pipeline-> gitlalb, deploy,
+ssm -> environmentss dev-> virarible -Values, 
+tag->  
+
+ECS--> In this use case
