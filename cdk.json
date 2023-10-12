@@ -58,7 +58,6 @@
     "@aws-cdk/aws-efs:mountTargetOrderInsensitiveLogicalId": true,
     "@aws-cdk/aws-rds:auroraClusterChangeScopeOfInstanceParameterGroupWithEachParameters": true,
     "@aws-cdk/aws-appsync:useArnForSourceApiAssociationIdentifier": true,
-    "@aws-cdk/aws-rds:preventRenderingDeprecatedCredentials": true,
-    "@aws-cdk/core:newStyleStackSynthesis": false
+    "@aws-cdk/aws-rds:preventRenderingDeprecatedCredentials": true
   }
 }

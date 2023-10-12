@@ -6,8 +6,7 @@ import { CmsCICDStack } from "./stacks/cicd.stack";
 
 const app = new App();
 
-new CmsCICDStack(app, 'CmsCICDStack')
-app.synth();
+
 const dataStack = new DataStack(app, 'DataStack')
 const lambdaStack = new LambdaStack(app, 'LambdaStack', {
   cmsTable: dataStack.cmsTable
@@ -17,3 +16,5 @@ const apiStack = new ApiStack(app, 'ApiStack', {
   // productLambdaIntegration: lambdaStack.productLambdaIntegration,
   // orderLambdaIntegration: lambdaStack.orderLambdaIntegration,
 });
+new CmsCICDStack(app, 'CmsCICDStack')
+app.synth();
