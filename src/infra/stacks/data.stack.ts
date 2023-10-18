@@ -1,4 +1,4 @@
-import { Stack, StackProps } from "aws-cdk-lib";
+import { RemovalPolicy, Stack, StackProps } from "aws-cdk-lib";
 import { AttributeType, ITable, Table } from "aws-cdk-lib/aws-dynamodb";
 import { Construct } from "constructs";
 
@@ -13,7 +13,8 @@ export class DataStack extends  Stack{
         name: 'id',
         type: AttributeType.STRING
       },
-      tableName: 'CMSTable'
+      tableName: 'CMSTable',
+      removalPolicy: RemovalPolicy.DESTROY
     })
 
     this.cmsTable = cmsTable
