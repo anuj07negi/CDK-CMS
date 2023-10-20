@@ -7,7 +7,7 @@
     {
       "type": "node",
       "request": "launch",
-      "name": "Debug Local File",
+      "name": "CMS Debug",
       "runtimeArgs": [
         "-r",
         "ts-node/register"
