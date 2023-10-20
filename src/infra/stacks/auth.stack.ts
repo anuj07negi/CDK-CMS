@@ -99,7 +99,7 @@ export class AuthStack extends Stack {
       )
     })
 
-    this.adminRole = new Role(this, 'CognitoDefaultAdmindRole', {
+    this.adminRole = new Role(this, 'CognitoDefaultAdminRole', {
       assumedBy: new FederatedPrincipal('cognito-identity.amazonaws.com', {
         StringEquals: {
           'cognito-identity.amazonaws.com:aud': this.identityPool.ref
