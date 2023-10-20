@@ -52,7 +52,7 @@ export class AuthStack extends Stack {
   }
 
   private createAdminsGroup() {
-    new CfnUserPoolGroup(this, 'SpaceAdmins', {
+    new CfnUserPoolGroup(this, 'CMSAdmins', {
       userPoolId: this.userPool.userPoolId,
       groupName: 'admins',
       roleArn: this.adminRole.roleArn
@@ -60,14 +60,14 @@ export class AuthStack extends Stack {
   }
 
   private createIdentityPool() {
-    this.identityPool = new CfnIdentityPool(this, 'SpaceIdentityPool', {
+    this.identityPool = new CfnIdentityPool(this, 'CMSIdentityPool', {
       allowUnauthenticatedIdentities: true,
       cognitoIdentityProviders: [{
         providerName: this.userPool.userPoolProviderName,
         clientId: this.userPoolClient.userPoolClientId
       }]
     })
-    new CfnOutput(this, 'SpaceIdentityPoolId', {
+    new CfnOutput(this, 'CMSIdentityPoolId', {
       value: this.identityPool.ref
     })
   }

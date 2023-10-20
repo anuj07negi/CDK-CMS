@@ -5,11 +5,7 @@ import { Amplify, Auth } from "aws-amplify";
 
 Amplify.configure({
   Auth: {
-    region: 'us-east-2',
-    userPoolId: 'us-east-2_T99FSJ0CX',
-    identityPool: 'us-east-2:e44e7f68-e167-4025-9a11-09f44a91346d',
-    userPoolWebClientId: '40ftnssd259gcslh223aabcha',
-    authenticationFlowType: 'USER_PASSWORD_AUTH'
+
   }
 })
 
@@ -22,7 +18,7 @@ export class AuthService {
 
   public async generateTemporaryCredentials(user: CognitoUser) {
     const jwtToken = user.getSignInUserSession().getIdToken().getJwtToken()
-    const cognitoIdentityPool = `cognito-idp.us-east-2.amazonaws.com/us-east-2_T99FSJ0CX`;
+    const cognitoIdentityPool = `cognito-idp.us-east-2.amazonaws.com/us-east-2_JldVXo3jm`;
     const cognitoIdentity = new CognitoIdentityClient({
       credentials: fromCognitoIdentityPool({
         identityPoolId: 'us-east-2:e44e7f68-e167-4025-9a11-09f44a91346d',
