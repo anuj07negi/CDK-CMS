@@ -14,7 +14,6 @@ export class DataStack extends  Stack{
         type: AttributeType.STRING
       },
       tableName: 'CMSTable',
-      removalPolicy: RemovalPolicy.DESTROY
     })
 
     this.cmsTable = cmsTable
