@@ -19,19 +19,19 @@ export class ApiStack extends Stack{
     const authorizer = new CognitoUserPoolsAuthorizer(this, 'CMSApiAuthorizer', {
       cognitoUserPools: [props.userPool],
       identitySource: 'method.request.header.Authorization'
-    })
+    });
     authorizer._attachToApi(customerAPI);
     const optionWithAuth: MethodOptions = {
       authorizationType: AuthorizationType.COGNITO,
       authorizer: {
         authorizerId: authorizer.authorizerId
       }
-    }
+    };
     const customerResource = customerAPI.root.addResource('customer');
-    customerResource.addMethod('POST', props.customerLambdaIntegration, optionWithAuth)
-    customerResource.addMethod('GET', props.customerLambdaIntegration, optionWithAuth)
-    customerResource.addMethod('PUT', props.customerLambdaIntegration, optionWithAuth)
-    customerResource.addMethod('DELETE', props.customerLambdaIntegration, optionWithAuth)
+    customerResource.addMethod('POST', props.customerLambdaIntegration, optionWithAuth);
+    customerResource.addMethod('GET', props.customerLambdaIntegration, optionWithAuth);
+    customerResource.addMethod('PUT', props.customerLambdaIntegration, optionWithAuth);
+    customerResource.addMethod('DELETE', props.customerLambdaIntegration, optionWithAuth);
 
 
     // const productAPI =  new RestApi( this, 'ProductAPI');

@@ -7,21 +7,21 @@ import { Effect, FederatedPrincipal, PolicyStatement, Role } from 'aws-cdk-lib/a
 
 export class AuthStack extends Stack {
 
-  public userPool: UserPool
-  public userPoolClient: UserPoolClient
-  public identityPool: CfnIdentityPool
-  public authenticatedRole: Role
-  public unAuthenticatedRole: Role
-  public adminRole: Role
+  public userPool: UserPool;
+  public userPoolClient: UserPoolClient;
+  public identityPool: CfnIdentityPool;
+  public authenticatedRole: Role;
+  public unAuthenticatedRole: Role;
+  public adminRole: Role;
 
   constructor(scope: Construct, id: string, props?: StackProps) {
     super(scope, id, props);
-    this.createUserPool()
-    this.createUserPoolClient()
-    this.createIdentityPool()
-    this.createRole()
-    this.attachRole()
-    this.createAdminsGroup()
+    this.createUserPool();
+    this.createUserPoolClient();
+    this.createIdentityPool();
+    this.createRole();
+    this.attachRole();
+    this.createAdminsGroup();
   }
 
   private createUserPool() {

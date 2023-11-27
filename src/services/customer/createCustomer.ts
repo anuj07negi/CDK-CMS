@@ -23,7 +23,7 @@ export async function createCustomer(event: APIGatewayProxyEvent, ddbClient: Dyn
   await ddbClient.send(new PutItemCommand({
     TableName: process.env.TABLE_NAME,
     Item: marshall(item)
-  }))
+  }));
   return {
     statusCode: 201,
     body: JSON.stringify({ mesage: 'succesfully created', id: item.id })

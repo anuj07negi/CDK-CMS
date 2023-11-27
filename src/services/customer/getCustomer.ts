@@ -11,7 +11,7 @@ export async function getCustomer(event: APIGatewayProxyEvent, ddbClient: Dynamo
         S: id
       }
     }
-  }))
+  }));
   return {
     statusCode: 200,
     body: JSON.stringify(Item ? unmarshall(Item) : {})
