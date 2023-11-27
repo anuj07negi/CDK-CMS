@@ -10,10 +10,10 @@ async function handler(event: APIGatewayProxyEvent, context: Context): Promise<A
       case 'POST':
         return await createCustomer(event, ddbClient);
       case 'GET':
-        return await getCustomer(event, ddbClient)
+        return await getCustomer(event, ddbClient);
     }
   } catch (error) {
-    console.log(error)
+    console.log(error);
     return {
       statusCode: 500,
       body: 'Internal Error'

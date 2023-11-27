@@ -27,7 +27,7 @@ export class LambdaStack extends Stack{
       environment:{
         TABLE_NAME: props.cmsTable.tableName
       }
-    })
+    });
     customerLambda.addToRolePolicy(new PolicyStatement({
       effect: Effect.ALLOW,
       resources:[props.cmsTable.tableArn],
@@ -37,7 +37,7 @@ export class LambdaStack extends Stack{
         'dynamodb:UpdateItem',
         'dynamodb:DeleteItem'
       ]
-    }))
+    }));
 
     // const productLambda = new NodejsFunction(this, 'productLambda', {
     //   runtime: Runtime.NODEJS_18_X,

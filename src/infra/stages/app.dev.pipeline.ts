@@ -7,12 +7,12 @@ import { AuthStack } from "../stacks/auth.stack";
 
 export class PipelineAppDev extends Stage {
   constructor(scope: Construct, id: string, props?: StageProps) {
-    super(scope, id, props)
-    const dataStack = new DataStack(this, 'DataStack')
+    super(scope, id, props);
+    const dataStack = new DataStack(this, 'DataStack');
     const lambdaStack = new LambdaStack(this, 'LambdaStack', {
       cmsTable: dataStack.cmsTable
     });
-    const authStack = new AuthStack(this, 'AuthStack')
+    const authStack = new AuthStack(this, 'AuthStack');
     const apiStack = new ApiStack(this, 'ApiStack', {
       customerLambdaIntegration: lambdaStack.customerLambdaIntegration,
       // productLambdaIntegration: lambdaStack.productLambdaIntegration,

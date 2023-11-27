@@ -5,7 +5,7 @@ import { PipelineAppDev } from "../stages/app.dev.pipeline";
 
 export class CmsCICDStack extends Stack {
   constructor(scope: Construct, id: string, props?: StackProps) {
-    super(scope, id, props)
+    super(scope, id, props);
     const pipeline = new CodePipeline(this, 'CMSPipeline', {
       pipelineName: 'CMSPipeline',
       synth: new ShellStep('Synth', {
@@ -15,8 +15,8 @@ export class CmsCICDStack extends Stack {
           'npx cdk synth'
         ]
       })
-    })
-    pipeline.addStage(new PipelineAppDev(this,  'AppDev' ))
+    });
+    pipeline.addStage(new PipelineAppDev(this,  'AppDev' ));
   }
 }
 
